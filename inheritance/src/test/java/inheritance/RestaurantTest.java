@@ -23,8 +23,9 @@ public class RestaurantTest {
 
     @Test
     public void testAddReview() {
-        Restaurant restaurant = new Restaurant("iHop", 2, "$");
-        Review review = new Review("Sojuro", "Bleh, get what you pay for", "$",);
-        restaurant.addReview(review); }
-
+        Restaurant restaurant = new Restaurant("Waffle House", 2, "$");
+        Review review = new Review("Sojuro", "Bleh.. you get what you pay for..",
+                2, restaurant);
+        restaurant.addReview(review);
+    }
 }

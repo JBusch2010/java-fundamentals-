@@ -21,13 +21,5 @@ public class Restaurant {
     //add review to list
     public void addReview(Review review) {
         reviews.add(review);
-
-        //update stars
-        int sum = 0;
-        for (Review rev : reviews) {
-            sum += rev.stars;
-        }
-        //calculate stars
-        this.stars = sum / reviews.size();
     }
 }
