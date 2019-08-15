@@ -21,3 +21,13 @@ I finished the first feature but I think I deleted it locally when I noticed I m
 Completed the hashmap function
 
 ### Lab 3 Ends
+
+### Lab 6/7 Starts
+
+Completed the features for Lab 6 and 7 even have some test cases built! Most are similar, but I guess that couldn't be helped.
+
+### Contributions
+        - Class 8 Code Review
+        - Matt Stuhring, explaied in awesome detail what I needed to do to complete the lab.
+
+### Lab 6/7 Ends
