@@ -3,12 +3,46 @@
  */
 package linter;
 
+import java.io.*;
+import java.util.Scanner;
+
 public class App {
-    public String getGreeting() {
-        return "Hello world.";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+
+        readJavaScript();
+    }
+
+    // scanning came from https://docs.oracle.com/javase/tutorial/essential/io/scanning.html
+    public static String readJavaScript() {
+        Scanner s;
+        //stringbuilder came from https://www.geeksforgeeks.org/stringbuilder-class-in-java-with-examples/
+        StringBuilder str = new StringBuilder();
+        int lineNumber = 0;
+
+        try {
+            s = new Scanner(new BufferedReader(new FileReader("./src/main/resources/gates.js")));
+
+            while (s.hasNextLine()) {
+                String line = s.nextLine();
+
+                lineNumber++;
+
+                if (!line.isEmpty()) {
+                    char lastChar = line.charAt(line.length() - 1);
+
+                    if (lastChar != ';' && lastChar != '{' && lastChar != '}' && !line.contains("if") && !line.contains("else")) {
+                        str.append("Line ").append(lineNumber).append(": Missing semicolon.").append(System.getProperty("line.separator"));
+                    }
+                }
+            }
+
+            s.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return str.toString();
     }
 }
